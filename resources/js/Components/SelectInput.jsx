@@ -19,7 +19,7 @@ export default forwardRef(function TextInput({ type = 'text', className = '', is
             }
             ref={input}
         >
-            <option value="">--Select {props.name}</option>
+            <option value="" className='capitalize'>-- Select {props.name} --</option>
             {options.length && options.map((val,key)=>
                 <option key={key} value={val.id}>{val.text}</option>
             )}

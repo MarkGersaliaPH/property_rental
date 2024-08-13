@@ -20,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'type',
         'password',
     ];
 
@@ -42,4 +43,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    protected $appends = ['type_display'];
+ 
+    public function getTypeDisplayAttribute(){
+        $type = $this->type;
+        $display = "Unknown";
+        if($type == 1){
+            $display = "Admin";
+        } 
+        if($type == 2){
+            $display = "Property Owner";
+        }
+        if($type == 3){
+            $display = "Tenant";
+        }
+        if($type == 4){
+            $display = "Staff";
+        }
+        return $display;
+    }
 }

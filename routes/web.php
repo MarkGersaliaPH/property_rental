@@ -37,4 +37,5 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('admin/property',App\Http\Controllers\Admin\PropertyController::class)->names('admin.property'); 
+Route::resource('admin/properties',App\Http\Controllers\Admin\PropertyController::class)->names('admin.properties'); 
+Route::resource('admin/users',App\Http\Controllers\Admin\UserController::class)->names('admin.users'); 

@@ -11,7 +11,8 @@ export default function Authenticated({ user, header, children }) {
 
     const navItems = [
         { name: "dashboard", route: "dashboard" },
-        { name: "property", route: "admin.property.index" },
+        { name: "properties", route: "admin.properties.index" },
+        { name: "users", route: "admin.users.index" },
     ];
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
